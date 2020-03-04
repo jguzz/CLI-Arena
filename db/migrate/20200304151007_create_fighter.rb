@@ -1,4 +1,5 @@
 class CreateFighter < ActiveRecord::Migration[6.0]
+  #Migration for fighter
   def change
     create_table :fighters do |t|
       t.integer :type_id
