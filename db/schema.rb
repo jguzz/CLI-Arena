@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_03_04_151007) do
 
   create_table "fighters", force: :cascade do |t|
+    t.string "name"
     t.integer "type_id"
     t.integer "weapon_id"
   end
