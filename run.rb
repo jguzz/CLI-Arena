@@ -3,6 +3,6 @@ require_relative "./config/environment"
 
 welcome
 
-your_fighter
+fighter = your_fighter
 
-puts Fighter.all
+puts "HERE HERE #{fighter.name.upcase}, DEFENDER OF THE REALM AND ALL AROUND BADASS!!!"

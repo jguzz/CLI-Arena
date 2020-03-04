@@ -1,7 +1,7 @@
-require 'pry'
+
 
 def welcome
-    puts "Hello! Welcome to CLI Arena!!"
+    puts "Hello Fighter! Welcome to CLI Arena!!"
 end
 
 def get_type_from_user
@@ -59,9 +59,11 @@ end
 def your_fighter
     type = get_type_from_user
     weapon = get_weapon_from_user
-    fighter = Fighter.create(type_id: type[:id], weapon_id: weapon[:id])
-    puts "You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck, Fighter..."
+    puts "And what's your name, Fighter?"
+    user_input = gets.chomp.capitalize
+    fighter = Fighter.create(name: user_input, type_id: type[:id], weapon_id: weapon[:id])
+    puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck..."
+    fighter
 end
 
-binding.pry
 puts "something"
