@@ -27,6 +27,7 @@ def fighter_stats(fighter)
     fighter[:hp] = type.hp
     fighter[:attack] = type.attack + weapon.attack
     fighter[:hit_percent] = (type.hit_percent + weapon.hit_percent) / 2
+    fighter[:max_hp] = type.hp
     fighter
 end
 

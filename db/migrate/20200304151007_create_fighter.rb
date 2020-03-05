@@ -8,6 +8,7 @@ class CreateFighter < ActiveRecord::Migration[6.0]
       t.integer :hp 
       t.integer :hit_percent
       t.integer :attack
+      t.integer :max_hp
     end
   end
 end
