@@ -5,6 +5,9 @@ class CreateFighter < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :type_id
       t.integer :weapon_id
+      t.integer :hp 
+      t.integer :hit_percent
+      t.integer :attack
     end
   end
 end
