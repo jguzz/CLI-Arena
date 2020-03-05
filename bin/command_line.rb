@@ -1,3 +1,4 @@
+require 'tty-prompt'
 def welcome
     puts "Hello Fighter! Welcome to CLI Arena!!"
 end
@@ -59,4 +60,18 @@ def your_fighter
     fighter = Fighter.create(name: user_input, type_id: type[:id], weapon_id: weapon[:id])
     puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck..."
     fighter
+end
+
+def fight_commands
+    prompt = TTY::Prompt.new
+    fighter1 = Fighter.find_by(name: "Warrior 1")
+    puts "Welcome to the Arena! Your first opponent is...#{fighter1.name}!"
+    prompt.select("Make your move!", %w(Attack Defend Heal))
+        if Attack
+            attack
+        elsif Defend
+            defend
+        else Heal
+            heal
+        end
 end
