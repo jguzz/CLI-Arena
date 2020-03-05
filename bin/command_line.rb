@@ -58,5 +58,23 @@ def your_fighter
     user_input = gets.chomp.capitalize
     fighter = Fighter.create(name: user_input, type_id: type[:id], weapon_id: weapon[:id])
     puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck..."
-    fighter
+    player1 = fighter_stats(fighter)
+    player1
+end
+
+def fight_commands(fighter, opponent)
+    prompt = TTY::Prompt.new
+    fighter.hp = fighter.max_hp
+    opponent.hp = opponent.max_hp
+    choices = {
+        "Attack" => -> do attack(fighter, opponent) end,
+        "Defend" => -> do defend end,
+        "Heal" => -> do heal end
+    }
+    puts "Welcome to the Arena! Your first opponent is...#{opponent.name}!"
+    while opponent.hp >= 0 || fghter.hp >= 0
+        prompt.select("Make your move!", choices)
+        puts "#{opponent.name}'s turn!"
+        opp_turn(fighter, opponent)
+    end
 end
