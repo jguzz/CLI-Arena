@@ -77,6 +77,9 @@ def fight_commands(fighter, opponent)
         prompt.select("Make your move!", choices)
         # puts "#{opponent.name}'s turn!"
         opp_turn(fighter, opponent)
+        if opponent.hp < (opponent.max_hp/3)
+            puts "#{opponent.name} is looking hurt!"
+        end
     end
     
     fighter.hp > 0 ? (puts "You are victorious!!!") : (puts "You've been defeated. Better luck next time.")

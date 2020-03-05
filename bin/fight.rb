@@ -67,19 +67,21 @@ end
 #Opponent does a randomized action
 def opp_turn(fighter, opponent)
     
-    if fighter.hp <= 0
+    if opponent.hp <= 0
         puts "#{opponent.name} is down!"
+        return #this exits the fight
     end
+    
     puts "#{opponent.name}'s turn!"
-
     moves = ["attack", "defend", "heal"].sample
-    if moves == "attack" && status == "alive"
+    
+    if moves == "attack" 
         puts "#{opponent.name} attacks!"
         attack(opponent,fighter)
-    elsif moves == "defend" && status == "alive"
+    elsif moves == "defend"
         puts "#{opponent.name} is defending!"
         defend(opponent, fighter)
-    else moves == "heal" && status == "alive"
+    else moves == "heal"
         puts "#{opponent.name} is healing!"
         heal(opponent)
     end
