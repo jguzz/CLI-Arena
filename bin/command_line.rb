@@ -1,3 +1,4 @@
+require 'tty-prompt'
 def welcome
     puts "Hello Fighter! Welcome to CLI Arena!!"
 end
@@ -77,4 +78,5 @@ def fight_commands(fighter, opponent)
         puts "#{opponent.name}'s turn!"
         opp_turn(fighter, opponent)
     end
+
 end

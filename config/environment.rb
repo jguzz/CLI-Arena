@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'tty-prompt'
 
 Bundler.require
 
