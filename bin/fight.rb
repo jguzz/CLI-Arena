@@ -16,7 +16,7 @@ def chance_to_hit(hit_percent, attacker, defender)
         #puts "The enemy took damage"
         hit(attacker, defender)
     else    
-        puts "You missed!"
+        puts "#{attacker.name} missed!"
     end 
 end
 
@@ -54,3 +54,30 @@ def defend_attack(user, opponent)
     user.hp -= (opponent.attack / 2)
     puts "#{user.name} blocked #{opponent.name} and only took #{users_original_hp - user.hp} damage!"
 end
+
+def heal(user)
+    if user.hp == user.max_hp
+        puts "Already at full health!"
+    else
+        user.hp += (user.max_hp * 0.25).round
+        puts "#{user.name} gained #{(user.max_hp * 0.25).round} health back!"
+    end
+end
+
+#Opponent does a randomized action
+def opp_turn(fighter, opponent)
+    if opponent.hp <= 0
+        puts "#{opponent.name} is down!"
+        return
+    end
+    puts "#{opponent.name}'s turn!"
+
+    moves = ["attack", "defend", "heal"].sample
+    if moves == "attack"
+     attack(opponent,fighter)
+    elsif moves == "defend"
+        defend(opponent, fighter)
+    else moves == "heal"
+        heal(opponent)
+    end
+end 

@@ -69,14 +69,16 @@ def fight_commands(fighter, opponent)
     opponent.hp = opponent.max_hp
     choices = {
         "Attack" => -> do attack(fighter, opponent) end,
-        "Defend" => -> do defend end,
-        "Heal" => -> do heal end
+        "Defend" => -> do defend(fighter, opponent) end,
+        "Heal" => -> do heal(fighter) end
     }
     puts "Welcome to the Arena! Your first opponent is...#{opponent.name}!"
-    while opponent.hp >= 0 || fghter.hp >= 0
+    while opponent.hp >= 0 && fighter.hp >= 0
+        puts "You're at #{fighter.hp} HP"
         prompt.select("Make your move!", choices)
-        puts "#{opponent.name}'s turn!"
+        # puts "#{opponent.name}'s turn!"
         opp_turn(fighter, opponent)
     end
-
+    
+    fighter.hp > 0 ? (puts "You are victorious!!!") : (puts "You've been defeated. Better luck next time.")
 end
