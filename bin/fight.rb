@@ -11,7 +11,7 @@ end
 #If the opponnent is hit, will call the method HIT else puts you missed.
 def chance_to_hit(hit_percent, attacker, defender)
     random = rand(100)
-    chance_to_hit = hit_percent
+    chance_to_hit = hit_percent - defender.dodge
     if chance_to_hit >= random
         #puts "The enemy took damage"
         hit(attacker, defender)
@@ -28,6 +28,7 @@ def fighter_stats(fighter)
     fighter[:attack] = type.attack + weapon.attack
     fighter[:hit_percent] = (type.hit_percent + weapon.hit_percent) / 2
     fighter[:max_hp] = type.hp
+    fighter[:dodge] = type.dodge
     fighter
 end
 

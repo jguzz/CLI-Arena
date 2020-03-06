@@ -6,6 +6,7 @@ class CreateType < ActiveRecord::Migration[6.0]
       t.integer :attack 
       t.integer :hit_percent
       t.integer :hp
+      t.integer :dodge
     end
   end
 end
