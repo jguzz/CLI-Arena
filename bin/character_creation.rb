@@ -114,7 +114,7 @@ def get_weapon_from_user
         "Brass Knuckles" => -> do weapon_hash = user_choice_knuckles end,
         "Staff" => -> do weapon_hash = user_choice_staff end
     }
-    prompt.select("Choose your Weapon", choices, symbols: {marker: '💣'})
+    prompt.select("Choose your Weapon", choices, symbols: {marker: '🗡'})
     return weapon_hash
 end
 
