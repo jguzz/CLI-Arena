@@ -1,9 +1,11 @@
 def arena
-    fighter1 = Fighter.find_by(name: "Warrior 1")
-    fighter2 = Fighter.find_by(name: "Rogue 1")
-    fighter3 = Fighter.find_by(name: "Brawler 1")
+    fighter1 = Fighter.find_by(name: "Gabbie the Brawler")
+    fighter2 = Fighter.find_by(name: "Chett the Wizard")
+    fighter3 = Fighter.find_by(name: "Brianna the Rogue")
+    fighter4 = Fighter.find_by(name: "Jeff the Battlemage")
+    fighter5 = Fighter.find_by(name: "Tashawn the Warrior")
 
-    opponent_array = [fighter1, fighter2, fighter3]
+    opponent_array = [fighter1, fighter2, fighter3, fighter4, fighter5].shuffle
     
     welcome
     user_fighter = your_fighter

@@ -20,6 +20,7 @@ end
 
 #Created stats (hp, attack, hit%) for a fighter object.
 def fighter_stats(fighter)
+   
     weapon = fighter.weapon 
     type = fighter.type 
     fighter[:hp] = type.hp

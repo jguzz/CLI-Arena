@@ -1,33 +1,5 @@
 require 'tty-prompt'
 
-def get_type_from_user
-    type_hash = {}
-    i = 0
-    while i < 1
-        puts "Please select your Fighter Type"
-        puts "--------------------------------"
-        puts "Enter Warrior, Rogue, or Brawler"
-        puts "--------------------------------"
-        user_input = gets.chomp.capitalize
-        if user_input == "Warrior"
-            type_hash[:name]= "Warrior"
-            type_hash[:id] = 2
-            break
-        elsif user_input == "Rogue"
-            type_hash[:name]= "Rogue"
-            type_hash[:id]= 1
-            break
-        elsif user_input == "Brawler"
-            type_hash[:name] = "Brawler"
-            type_hash[:id] = 3
-            break
-        else
-            puts "Invalid option"
-        end
-    end
-    return type_hash
-end
-
 def user_choice_warrior
     type_hash = Hash.new
     type_hash[:name] = "Warrior"
@@ -124,6 +96,7 @@ def your_fighter
     puts "And what's your name, Fighter?".red
     user_input = gets.chomp.capitalize
     fighter = Fighter.create(name: user_input, type_id: type[:id], weapon_id: weapon[:id])
+   
     puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck...".green
     user_fighter = fighter_stats(fighter)
     puts "Your stats look like this... 

@@ -87,7 +87,7 @@ Fighter.create({
     type_id: 4 #wizard
 })
 Fighter.create({
-    name: "Jeff the Battlemage"
+    name: "Jeff the Battlemage",
     weapon_id: 5, #staff
     type_id: 2 #warrior
 })
