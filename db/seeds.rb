@@ -58,8 +58,8 @@ Type.create({
 })
 Type.create({
     name: "Wizard",
-    hp: 30,
-    attack: 6,
+    hp: 20,
+    attack: 8,
     hit_percent: 70,
     dodge: 6
 })
@@ -67,22 +67,27 @@ Type.create({
 #=======================================================================================
 #FIGHTERS
 Fighter.create({
-    name: "Warrior 1",
+    name: "Tashawn the Warrior",
     weapon_id: 3, #Battleaxe
     type_id: 2 #Warrior
 })
 Fighter.create({
-    name: "Rogue 1",
+    name: "Brianna the Rogue",
     weapon_id: 2,#dagger
     type_id: 1 #rogue
 })
 Fighter.create({
-    name: "Brawler 1",
+    name: "Gabbie the Brawler",
     weapon_id: 4,#brass knuckles
     type_id: 3 #Brawler
 })
 Fighter.create({
-    name: "Wizard 1",
+    name: "Chett the Wizard",
     weapon_id: 5,#staff
     type_id: 4 #wizard
+})
+Fighter.create({
+    name: "Jeff the Battlemage"
+    weapon_id: 5, #staff
+    type_id: 2 #warrior
 })
