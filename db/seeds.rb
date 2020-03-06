@@ -2,7 +2,7 @@
 #WEAPONS
 Weapon.create({
     #id 1
-    weapon_type: "Shortsword",
+    weapon_type: "Shortsword ⚔️",
     hit_percent: 60,
     attack: 5
 })
@@ -18,25 +18,46 @@ Weapon.create({
     hit_percent: 50,
     attack: 6
 })
+Weapon.create({
+    #id 3
+    weapon_type: "Brass Knuckles",
+    hit_percent: 90,
+    attack: 4
+})
+Weapon.create({
+    #id 3
+    weapon_type: "Staff",
+    hit_percent: 30,
+    attack: 10
+})
 #=======================================================================================
 #CHARACTER TYPES
 #id: 1
 Type.create({
     name: "Rogue",
-    hp: 24,
+    hp: 25,
     attack: 2,
-    hit_percent: 90
+    hit_percent: 90,
+    dodge: 10
 })
 #id: 2
 Type.create({
     name: "Warrior",
     hp: 27,
     attack: 4,
-    hit_percent: 80
+    hit_percent: 80,
+    dodge: 5
 })
 #id: 3
 Type.create({
     name: "Brawler",
+    hp: 30,
+    attack: 6,
+    hit_percent: 70,
+    dodge: 2
+})
+Type.create({
+    name: "Wizard",
     hp: 30,
     attack: 6,
     hit_percent: 70
@@ -56,6 +77,11 @@ Fighter.create({
 })
 Fighter.create({
     name: "Brawler 1",
-    weapon_id: 1,#shortsword
+    weapon_id: 4,#brass knuckles
     type_id: 3 #Brawler
+})
+Fighter.create({
+    name: "Wizard 1",
+    weapon_id: 5,#staff
+    type_id: 4 #wizard
 })
