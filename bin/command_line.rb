@@ -74,7 +74,7 @@ def fight_commands(fighter, opponent)
     }
     while opponent.hp > 0 && fighter.hp > 0
         puts "You're at #{fighter.hp} HP"
-        prompt.select("Make your move!", choices)
+        prompt.select("Make your move!", choices ,symbols: {marker: '🗡'})
         # puts "#{opponent.name}'s turn!"
         opp_turn(fighter, opponent)
         if opponent.hp < (opponent.max_hp/3)
