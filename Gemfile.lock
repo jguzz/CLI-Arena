@@ -13,6 +13,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
     coderay (1.1.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.6)
     equatable (0.6.1)
     i18n (1.8.2)
@@ -66,6 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  colorize
   pry
   rake
   require_all

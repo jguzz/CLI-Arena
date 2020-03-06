@@ -10,17 +10,17 @@ def arena
     user_fighter = fighter_stats(user_fighter)
     while opponent_array.length != 0
         opponent = fighter_stats(opponent_array.last)
-        puts "Your first opponent is #{opponent.name}... Good luck!"
+        puts "Your first opponent is #{opponent.name}... Good luck!".red
         fight_interface(user_fighter, opponent)
         opponent_array.pop
         if user_fighter.hp < 0
             return
         elsif opponent_array.length != 0
-            puts "Your next opponent is #{opponent_array.last.name}..."
+            puts "Your next opponent is #{opponent_array.last.name}...".red
         else
-            puts "YOU HAVE WON CLI ARENA!!!! WHAT A BADASS!!!"
+            puts "YOU HAVE WON CLI ARENA!!!! WHAT A BADASS!!!".green
             return
         end
     end
-    puts "Thank you for playing, see you next time!"
+    puts "Thank you for playing, see you next time!".red
 end
