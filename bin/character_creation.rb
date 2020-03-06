@@ -100,7 +100,7 @@ def get_type_from_user
         "Brawler" => -> do type_hash = user_choice_brawler end,
         "Wizard" => -> do type_hash = user_choice_wizard end
     }
-    prompt.select("Choose your Fighter Type", choices, symbols: {marker: '🗡'})
+    prompt.select("Choose your Fighter Type".red, choices, symbols: {marker: '🗡'})
     return type_hash
 end
 
@@ -114,22 +114,22 @@ def get_weapon_from_user
         "Brass Knuckles" => -> do weapon_hash = user_choice_knuckles end,
         "Staff" => -> do weapon_hash = user_choice_staff end
     }
-    prompt.select("Choose your Weapon", choices, symbols: {marker: '🗡'})
+    prompt.select("Choose your Weapon".red, choices, symbols: {marker: '🗡'})
     return weapon_hash
 end
 
 def your_fighter
     type = get_type_from_user
     weapon = get_weapon_from_user
-    puts "And what's your name, Fighter?"
+    puts "And what's your name, Fighter?".red
     user_input = gets.chomp.capitalize
     fighter = Fighter.create(name: user_input, type_id: type[:id], weapon_id: weapon[:id])
-    puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck..."
+    puts "#{user_input}, You have selected a #{type[:name]}, and are fighting with a #{weapon[:name]}. Nice! You're ready for combat. Good luck...".green
     user_fighter = fighter_stats(fighter)
     puts "Your stats look like this... 
          HP: #{user_fighter.hp}
          Attack Damage: #{user_fighter.attack}
          Hit %: #{user_fighter.hit_percent}
-         Dodge %: #{user_fighter.dodge}"
+         Dodge %: #{user_fighter.dodge}".yellow
     user_fighter
 end

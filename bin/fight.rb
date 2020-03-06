@@ -1,10 +1,8 @@
-# class Attack(player, cpu)
-
-# end
+require 'colorize'
 def hit(attacker, defender)
     defenders_original_hp = defender.hp
     defender.hp -= attacker.attack
-    puts "#{defender.name} took #{defenders_original_hp - defender.hp} damage!"
+    puts "#{defender.name} took #{defenders_original_hp - defender.hp} damage!".red
 end
 
 #Uses hit percentage to determine if the opponent will be hit or not.
@@ -16,7 +14,7 @@ def chance_to_hit(hit_percent, attacker, defender)
         #puts "The enemy took damage"
         hit(attacker, defender)
     else    
-        puts "#{attacker.name} missed!"
+        puts "#{attacker.name} missed!".yellow
     end 
 end
 
@@ -45,7 +43,7 @@ def defend(user, opponent)
         #puts "The enemy took damage"
         defend_attack(user, opponent)
     else    
-        puts "#{opponent.name} missed!"
+        puts "#{opponent.name} missed!".yellow
     end 
 end
 
@@ -53,15 +51,15 @@ end
 def defend_attack(user, opponent)
     users_original_hp = user.hp 
     user.hp -= (opponent.attack / 2)
-    puts "#{user.name} blocked #{opponent.name} and only took #{users_original_hp - user.hp} damage!"
+    puts "#{user.name} blocked #{opponent.name} and only took #{users_original_hp - user.hp} damage!".yellow
 end
 
 def heal(user)
     if user.hp == user.max_hp
-        puts "Already at full health!"
+        puts "Already at full health!".blue
     else
         user.hp += (user.max_hp * 0.25).round
-        puts "#{user.name} gained #{(user.max_hp * 0.25).round} health back!"
+        puts "#{user.name} gained #{(user.max_hp * 0.25).round} health back!".blue
     end
 end
 
@@ -69,7 +67,7 @@ end
 def opp_turn(fighter, opponent)
     
     if opponent.hp <= 0
-        puts "#{opponent.name} is down!"
+        puts "#{opponent.name} is down!".red
         return #this exits the fight
     end
     
@@ -77,13 +75,13 @@ def opp_turn(fighter, opponent)
     moves = ["attack", "defend", "heal"].sample
     
     if moves == "attack" 
-        puts "#{opponent.name} attacks!"
+        puts "#{opponent.name} attacks!".red
         attack(opponent,fighter)
     elsif moves == "defend"
-        puts "#{opponent.name} is defending!"
+        puts "#{opponent.name} is defending!".yellow
         defend(opponent, fighter)
     else moves == "heal"
-        puts "#{opponent.name} is healing!"
+        puts "#{opponent.name} is healing!".blue
         heal(opponent)
     end
     
