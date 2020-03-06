@@ -11,7 +11,7 @@ def arena
     while opponent_array.length != 0
         opponent = fighter_stats(opponent_array.last)
         puts "Your first opponent is #{opponent.name}... Good luck!"
-        fight_commands(user_fighter, opponent)
+        fight_interface(user_fighter, opponent)
         opponent_array.pop
         if user_fighter.hp < 0
             return
