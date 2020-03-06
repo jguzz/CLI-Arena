@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_151007) do
     t.integer "hit_percent"
     t.integer "attack"
     t.integer "max_hp"
+    t.integer "dodge"
   end
 
   create_table "types", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_151007) do
     t.integer "attack"
     t.integer "hit_percent"
     t.integer "hp"
+    t.integer "dodge"
   end
 
   create_table "weapons", force: :cascade do |t|

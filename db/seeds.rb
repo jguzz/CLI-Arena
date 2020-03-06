@@ -23,23 +23,26 @@ Weapon.create({
 #id: 1
 Type.create({
     name: "Rogue",
-    hp: 24,
+    hp: 25,
     attack: 2,
-    hit_percent: 90
+    hit_percent: 90,
+    dodge: 10
 })
 #id: 2
 Type.create({
     name: "Warrior",
     hp: 27,
     attack: 4,
-    hit_percent: 80
+    hit_percent: 80,
+    dodge: 5
 })
 #id: 3
 Type.create({
     name: "Brawler",
     hp: 30,
     attack: 6,
-    hit_percent: 70
+    hit_percent: 70,
+    dodge: 2
 })
 
 #=======================================================================================
